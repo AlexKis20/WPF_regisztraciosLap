@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_regisztraciosLap"
         mc:Ignorable="d"
-        Title="regisztracio" Height="300" Width="400">
+        Title="regisztracio" Height="600" Width="400">
     <Grid>
         <Label
             Content="Regisztrációs lap"
@@ -92,6 +92,26 @@
             FontWeight="Bold"
             FontSize="30"
             Foreground="Blue" Click="btn_regisztracio_Click"
+            />
+        <Label
+            Content="Regisztrált felhasználók"
+            Margin="20 250 0 0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Height="auto"
+            Width="auto"
+            FontSize="16"
+            FontWeight="DemiBold"
+            />
+        <ListBox
+            x:Name="lb_user"
+            Margin="20 280 0 0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Height="250"
+            Width="350"
+            
+            
             />
 
     </Grid>

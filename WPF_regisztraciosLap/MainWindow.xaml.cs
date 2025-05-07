@@ -35,7 +35,7 @@ namespace WPF_regisztraciosLap
             string jelszo=tbx_jelszo.Text;
             if (IsValidEmail(email)==false)
             {
-                MessageBox.Show("Hibás email cím!");
+                MessageBox.Show("Hibás email cím!\n(Tartalmaznia kell: `@`,`.`","Hiba",MessageBoxButton.OK,MessageBoxImage.Error);
                 
                 tbx_emailcim.Clear();
                 
@@ -43,7 +43,7 @@ namespace WPF_regisztraciosLap
         
             else if (IsValidPassword(jelszo) == false)
             {
-                MessageBox.Show("Hibás jelszó!");
+                MessageBox.Show("Hibás jelszó!\n(Minimum 8 karakter, tartalmaznia kell speciális karaktert (pl. #,&,!...) és számot","Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
                 
                 
                 tbx_jelszo.Clear();
@@ -54,7 +54,8 @@ namespace WPF_regisztraciosLap
                 fajlbaIr(nev, email, jelszo);
                 var egyadat = new adat(nev, email, jelszo);
                 Adatok.Add(egyadat);
-                MessageBox.Show("Sikeres regisztráció");
+                lb_user.Items.Add($"{nev}, {email}, {jelszo}");
+                MessageBox.Show("Sikeres regisztráció","Gratulálunk!",MessageBoxButton.OK,MessageBoxImage.Information);
                 tbx_nev.Clear();
                 tbx_emailcim.Clear();
                 tbx_jelszo.Clear();
